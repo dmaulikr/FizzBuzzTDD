@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         case buzzButton:
             play(move: .Buzz)
         case fizzBuzzButton:
-            play(move: .Buzz)
+            play(move: .FizzBuzz)
         default:
             print("Invalid selection")
         }

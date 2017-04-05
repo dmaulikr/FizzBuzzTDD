@@ -27,15 +27,14 @@ class Brain {
     }
     
     func check(number: Int) -> Move {
-        switch number {
-        case 15:
-            return Move.FizzBuzz
-        case 3:
-            return Move.Fizz
-        case 5:
-            return Move.Buzz
-        default:
-            return Move.Number
+        if isDivisibleByThreeAndFive(number: number) {
+            return .FizzBuzz
+        } else if isDivisibleByThree(number: number) {
+            return .Fizz
+        } else if isDivisibleByFive(number: number) {
+            return .Buzz
+        } else {
+            return .Number
         }
     }
 }
