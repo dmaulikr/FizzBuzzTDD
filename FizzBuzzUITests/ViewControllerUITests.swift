@@ -86,6 +86,18 @@ class ViewControllerUITests: XCTestCase {
         XCTAssertEqual(newScore, "15")
     }
     
+    func testTapResetButton() {
+        let app = XCUIApplication()
+        let numberButton = app.buttons["numberButton"]
+        let resetButton = app.buttons["resetButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        resetButton.tap()
+        let newScore = numberButton.label
+        XCTAssertEqual(newScore, "0")
+    }
+    
 }
 
 extension ViewControllerUITests {

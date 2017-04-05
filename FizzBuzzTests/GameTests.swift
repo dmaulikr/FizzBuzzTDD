@@ -111,4 +111,10 @@ class GameTests: XCTestCase {
         XCTAssertNotNil(response.1)
     }
     
+    func testResetGameScore() {
+        game.score = 4
+        game.reset()
+        XCTAssertEqual(game.score, 0)
+    }
+    
 }

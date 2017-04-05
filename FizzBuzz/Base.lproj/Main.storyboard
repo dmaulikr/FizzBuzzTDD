@@ -26,10 +26,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-rT-YZn">
                                 <rect key="frame" x="260" y="607" width="99" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resetButton"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="0.98019164800643921" green="0.96099060773849487" blue="0.83928126096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6a-Qv-3C2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-9r-zR3">
                                 <rect key="frame" x="317" y="20" width="32" height="28"/>
@@ -120,6 +124,7 @@
                         <outlet property="fizzButton" destination="7zW-H7-dth" id="O8P-SA-0cr"/>
                         <outlet property="fizzBuzzButton" destination="Cun-ae-AnF" id="bNt-Vc-Srd"/>
                         <outlet property="numberButton" destination="ELs-a6-UVQ" id="Epw-G8-amk"/>
+                        <outlet property="resetButton" destination="PVC-rT-YZn" id="Sl8-KE-4WP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

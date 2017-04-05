@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fizzButton: UIButton!
     @IBOutlet weak var buzzButton: UIButton!
     @IBOutlet weak var fizzBuzzButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,13 @@ class ViewController: UIViewController {
             play(move: .Buzz)
         case fizzBuzzButton:
             play(move: .FizzBuzz)
+        case resetButton:
+            guard let unwrappedGame = game else {
+                print("Game is nil")
+                return
+            }
+            unwrappedGame.reset()
+            gameScore = unwrappedGame.score
         default:
             print("Invalid selection")
         }
