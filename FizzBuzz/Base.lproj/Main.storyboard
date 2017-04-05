@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FizzBuzz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +23,113 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-rT-YZn">
+                                <rect key="frame" x="260" y="607" width="99" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="0.98019164800643921" green="0.96099060773849487" blue="0.83928126096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKe-9r-zR3">
+                                <rect key="frame" x="317" y="20" width="32" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.98019164800000003" green="0.9609906077" blue="0.839281261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-Nv-74Y" userLabel="GameView">
+                                <rect key="frame" x="56" y="202" width="262" height="262"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-a6-UVQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="numberButton"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
+                                        <state key="normal" title="0" backgroundImage="button_border">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8g-lJ-LS0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zW-H7-dth" userLabel="FizzButton">
+                                        <rect key="frame" x="136" y="-1" width="126" height="126"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzButton"/>
+                                        <state key="normal" image="champagne" backgroundImage="button_border">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGc-fm-ALB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-4Z-yoc">
+                                        <rect key="frame" x="0.0" y="134" width="126" height="126"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="buzzButton"/>
+                                        <state key="normal" image="lightning" backgroundImage="button_border">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jyk-Y8-KEU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cun-ae-AnF">
+                                        <rect key="frame" x="136" y="134" width="126" height="126"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="fizzBuzzButton"/>
+                                        <state key="normal" image="space" backgroundImage="button_border">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7K-np-hI0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cun-ae-AnF" secondAttribute="trailing" id="3Ve-Nm-Qfi"/>
+                                    <constraint firstItem="qpO-4Z-yoc" firstAttribute="leading" secondItem="dCp-Nv-74Y" secondAttribute="leading" id="8Ra-eZ-FL6"/>
+                                    <constraint firstItem="ELs-a6-UVQ" firstAttribute="height" secondItem="dCp-Nv-74Y" secondAttribute="height" multiplier="0.48" id="9np-gD-XJw"/>
+                                    <constraint firstItem="ELs-a6-UVQ" firstAttribute="top" secondItem="dCp-Nv-74Y" secondAttribute="top" id="DA3-cC-5VJ"/>
+                                    <constraint firstItem="7zW-H7-dth" firstAttribute="height" secondItem="ELs-a6-UVQ" secondAttribute="height" id="H7p-Jl-Det"/>
+                                    <constraint firstItem="7zW-H7-dth" firstAttribute="width" secondItem="ELs-a6-UVQ" secondAttribute="width" id="LRa-cW-qlT"/>
+                                    <constraint firstAttribute="trailing" secondItem="7zW-H7-dth" secondAttribute="trailing" id="Mih-h4-d1S"/>
+                                    <constraint firstItem="Cun-ae-AnF" firstAttribute="width" secondItem="ELs-a6-UVQ" secondAttribute="width" id="Nff-yR-uWR"/>
+                                    <constraint firstAttribute="bottom" secondItem="qpO-4Z-yoc" secondAttribute="bottom" constant="2" id="P9X-H3-CGk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cun-ae-AnF" secondAttribute="bottom" constant="2" id="Qv4-GK-h09"/>
+                                    <constraint firstItem="7zW-H7-dth" firstAttribute="top" secondItem="dCp-Nv-74Y" secondAttribute="top" constant="-1" id="WFB-kV-OwU"/>
+                                    <constraint firstItem="qpO-4Z-yoc" firstAttribute="width" secondItem="ELs-a6-UVQ" secondAttribute="width" id="WHA-fw-oKZ"/>
+                                    <constraint firstAttribute="width" secondItem="dCp-Nv-74Y" secondAttribute="height" multiplier="1:1" id="hAi-M4-nqF"/>
+                                    <constraint firstItem="ELs-a6-UVQ" firstAttribute="width" secondItem="dCp-Nv-74Y" secondAttribute="width" multiplier="0.48" id="jQj-e1-oGA"/>
+                                    <constraint firstItem="qpO-4Z-yoc" firstAttribute="height" secondItem="ELs-a6-UVQ" secondAttribute="height" id="qfY-Yy-pt3"/>
+                                    <constraint firstItem="ELs-a6-UVQ" firstAttribute="leading" secondItem="dCp-Nv-74Y" secondAttribute="leading" id="uOB-yM-hoR"/>
+                                    <constraint firstItem="Cun-ae-AnF" firstAttribute="height" secondItem="ELs-a6-UVQ" secondAttribute="height" id="zSB-9i-l26"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.76854932308197021" blue="0.69794243574142456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PVC-rT-YZn" secondAttribute="trailing" id="CZC-W9-ys2"/>
+                            <constraint firstItem="OKe-9r-zR3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="W4k-D4-4Kg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PVC-rT-YZn" secondAttribute="bottom" constant="20" id="XTA-br-Rui"/>
+                            <constraint firstItem="dCp-Nv-74Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="bqP-5p-S1P"/>
+                            <constraint firstItem="dCp-Nv-74Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gsE-IA-h3h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OKe-9r-zR3" secondAttribute="trailing" constant="10" id="j2w-MB-DXP"/>
+                            <constraint firstItem="dCp-Nv-74Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ye1-i7-8IF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buzzButton" destination="qpO-4Z-yoc" id="kdB-yh-oj2"/>
+                        <outlet property="fizzButton" destination="7zW-H7-dth" id="O8P-SA-0cr"/>
+                        <outlet property="fizzBuzzButton" destination="Cun-ae-AnF" id="bNt-Vc-Srd"/>
+                        <outlet property="numberButton" destination="ELs-a6-UVQ" id="Epw-G8-amk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border" width="400" height="400"/>
+        <image name="champagne" width="49" height="50"/>
+        <image name="lightning" width="29" height="50"/>
+        <image name="space" width="47" height="50"/>
+    </resources>
 </document>
